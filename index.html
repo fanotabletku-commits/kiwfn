@@ -1,1 +1,664 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KING_ZELETOT | Suntik Sosmed</title>
+<meta name="description" content="KING_ZELETOT - Layanan TikTok, Instagram dan YouTube. Cek daftar harga dan hubungi WhatsApp kami.">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --blue: #087bff;
+  --cyan: #00eaff;
+  --gold: #ffc629;
+  --dark: #020817;
+  --panel: #0a2045;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at top, #073b91 0%, transparent 55%),
+    linear-gradient(145deg, #020612, #061b40, #020612);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(#168cff 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: .13;
+  z-index: -1;
+}
+
+.container {
+  width: 92%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+/* NAVBAR */
+
+header {
+  padding: 18px 0;
+  border-bottom: 1px solid #087bff55;
+  background: #020817eF;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-family: Orbitron;
+  font-size: 21px;
+  font-weight: 900;
+  color: var(--gold);
+  text-shadow: 0 0 15px #ffbd28;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  margin-left: 18px;
+  transition: .3s;
+}
+
+.nav a:hover {
+  color: var(--cyan);
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 75px 15px 55px;
+}
+
+.crown {
+  font-size: 75px;
+  filter: drop-shadow(0 0 15px gold);
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px); }
+}
+
+.hero h1 {
+  font-family: Orbitron;
+  font-size: clamp(30px, 7vw, 65px);
+  color: white;
+  text-shadow: 0 0 15px var(--blue), 0 0 35px var(--cyan);
+  margin: 15px 0;
+}
+
+.hero h2 {
+  font-size: clamp(20px, 4vw, 34px);
+  color: var(--gold);
+}
+
+.hero p {
+  color: #c5ddff;
+  margin: 15px 0 25px;
+}
+
+.tagline {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid var(--cyan);
+  border-radius: 30px;
+  color: var(--cyan);
+  font-weight: 700;
+  box-shadow: 0 0 15px #008cff55;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px var(--cyan);
+}
+
+.btn-main {
+  background: linear-gradient(90deg, #087bff, #00d9ff);
+  color: white;
+}
+
+.btn-order {
+  background: linear-gradient(90deg, #00bd64, #00ed91);
+  color: white;
+}
+
+/* INFO */
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 60px;
+}
+
+.info-box {
+  background: #0a2045;
+  border: 1px solid var(--blue);
+  border-radius: 15px;
+  padding: 20px 10px;
+  text-align: center;
+  box-shadow: 0 0 15px #087bff30;
+}
+
+.info-box strong {
+  display: block;
+  color: var(--cyan);
+  font-size: 17px;
+}
+
+.info-box span {
+  font-size: 12px;
+  color: #c5ddff;
+}
+
+/* SERVICES */
+
+.section-title {
+  text-align: center;
+  font-family: Orbitron;
+  font-size: clamp(22px, 4vw, 32px);
+  margin-bottom: 30px;
+  color: var(--gold);
+  text-shadow: 0 0 15px #ffbd28;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 65px;
+}
+
+.service-card {
+  background: linear-gradient(145deg, #102b56, #06132c);
+  border: 1px solid var(--blue);
+  border-radius: 18px;
+  padding: 22px 18px;
+  box-shadow: 0 0 17px #087bff25;
+  transition: .3s;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--cyan);
+  box-shadow: 0 0 25px #00dfff55;
+}
+
+.service-card h3 {
+  font-family: Orbitron;
+  font-size: 16px;
+  color: var(--cyan);
+  margin-bottom: 20px;
+}
+
+.price-group {
+  margin-bottom: 20px;
+}
+
+.price-group h4 {
+  font-size: 13px;
+  color: var(--gold);
+  margin-bottom: 9px;
+  border-bottom: 1px solid #ffffff22;
+  padding-bottom: 7px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  padding: 6px 0;
+  color: #d6e8ff;
+}
+
+.price b {
+  color: var(--cyan);
+  white-space: nowrap;
+}
+
+.order-small {
+  display: block;
+  text-align: center;
+  padding: 11px;
+  background: #087bff22;
+  border: 1px solid var(--blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 12px;
+  transition: .3s;
+}
+
+.order-small:hover {
+  background: var(--blue);
+}
+
+/* PAYMENT */
+
+.payment {
+  background: linear-gradient(135deg, #102c59, #06132c);
+  border: 1px solid var(--gold);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px #ffbd2825;
+}
+
+.payment h2 {
+  color: var(--gold);
+  font-family: Orbitron;
+  margin-bottom: 20px;
+}
+
+.payment-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.payment-list span {
+  padding: 12px 22px;
+  background: white;
+  color: #07152d;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+/* CONTACT */
+
+.contact {
+  text-align: center;
+  padding: 40px 15px;
+  margin: 35px 0;
+  border: 1px solid var(--cyan);
+  border-radius: 20px;
+  background: linear-gradient(120deg, #062451, #0a1640);
+  box-shadow: 0 0 25px #008cff35;
+}
+
+.contact h2 {
+  font-family: Orbitron;
+  color: var(--gold);
+  font-size: clamp(22px, 4vw, 34px);
+}
+
+.phone {
+  font-size: clamp(23px, 5vw, 36px);
+  font-weight: 900;
+  color: var(--cyan);
+  margin: 15px 0 25px;
+}
+
+/* FLOATING WHATSAPP */
+
+.floating-wa {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  background: linear-gradient(135deg, #00e676, #00a854);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+  box-shadow: 0 0 20px #00e67699;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 30px #00e676;
+  }
+}
+
+/* FOOTER */
+
+.note {
+  font-size: 10px;
+  color: #a9c5e6;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 10px;
+  background: #020612;
+  border-top: 1px solid #087bff55;
+  color: #9db9db;
+  font-size: 12px;
+}
+
+footer strong {
+  color: var(--gold);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 600px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .nav a {
+    margin-left: 8px;
+    font-size: 11px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding-top: 55px;
+  }
+
+  .floating-wa {
+    right: 12px;
+    bottom: 12px;
+    font-size: 11px;
+    padding: 12px 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <div class="container nav">
+    <div class="logo">👑 KING_ZELETOT</div>
+    <nav>
+      <a href="#layanan">Layanan</a>
+      <a href="#payment">Payment</a>
+      <a href="#contact">Order</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="crown">👑</div>
+  <h1>KING_ZELETOT</h1>
+  <h2>SUNTIK SOSMED</h2>
+  <p>TERMURAH • TERCEPAT • TERLENGKAP</p>
+
+  <div class="tagline">
+    ⚡ Estimasi proses 15–60 Menit
+  </div>
+
+  <br><br>
+
+  <a class="btn btn-main" href="#layanan">
+    LIHAT DAFTAR HARGA
+  </a>
+</section>
+
+<div class="container">
+
+<!-- INFO -->
+<div class="info">
+  <div class="info-box">
+    <strong>⚡ 15–60 MENIT</strong>
+    <span>Estimasi proses</span>
+  </div>
+
+  <div class="info-box">
+    <strong>💎 HARGA TERJANGKAU</strong>
+    <span>Banyak pilihan paket</span>
+  </div>
+
+  <div class="info-box">
+    <strong>🕒 05.00–21.00</strong>
+    <span>Jam operasional WIB</span>
+  </div>
+</div>
+
+<!-- DAFTAR HARGA -->
+<section id="layanan">
+<h2 class="section-title">🔥 DAFTAR LAYANAN</h2>
+
+<div class="services">
+
+<!-- TIKTOK -->
+<div class="service-card">
+<h3>🎵 TIKTOK SERVICES</h3>
+
+<div class="price-group">
+<h4>❤️ LIKE PERMANEN</h4>
+<div class="price"><span>300 Like</span><b>Rp3.900</b></div>
+<div class="price"><span>500 Like</span><b>Rp5.900</b></div>
+<div class="price"><span>1.000 Like</span><b>Rp9.900</b></div>
+<div class="price"><span>2.000 Like</span><b>Rp17.900</b></div>
+<div class="price"><span>5.000 Like</span><b>Rp44.900</b></div>
+</div>
+
+<div class="price-group">
+<h4>👥 FOLLOWERS MIX</h4>
+<div class="price"><span>100 Followers</span><b>Rp9.900</b></div>
+<div class="price"><span>300 Followers</span><b>Rp14.900</b></div>
+<div class="price"><span>500 Followers</span><b>Rp19.900</b></div>
+<div class="price"><span>1.000 Followers</span><b>Rp27.900</b></div>
+</div>
+
+<div class="price-group">
+<h4>🇮🇩 FOLLOWERS FULL INDO</h4>
+<div class="price"><span>100 Followers</span><b>Rp14.900</b></div>
+<div class="price"><span>500 Followers</span><b>Rp24.900</b></div>
+<div class="price"><span>1.000 Followers</span><b>Rp33.900</b></div>
+</div>
+
+<div class="price-group">
+<h4>▶️ VIEWS</h4>
+<div class="price"><span>1.000 Views</span><b>Rp1.900</b></div>
+<div class="price"><span>5.000 Views</span><b>Rp7.900</b></div>
+<div class="price"><span>10.000 Views</span><b>Rp11.900</b></div>
+</div>
+
+<a class="order-small" href="https://wa.me/628979864997?text=Halo%20King_Zeletot%2C%20saya%20mau%20order%20TikTok.">
+ORDER TIKTOK →
+</a>
+</div>
+
+<!-- INSTAGRAM -->
+<div class="service-card">
+<h3>📸 INSTAGRAM SERVICES</h3>
+
+<div class="price-group">
+<h4>❤️ LIKE</h4>
+<div class="price"><span>500 Like</span><b>Rp2.900</b></div>
+<div class="price"><span>1.000 Like</span><b>Rp7.900</b></div>
+<div class="price"><span>2.000 Like</span><b>Rp11.900</b></div>
+</div>
+
+<div class="price-group">
+<h4>👥 FOLLOWERS MIX</h4>
+<div class="price"><span>100 Followers</span><b>Rp9.900</b></div>
+<div class="price"><span>500 Followers</span><b>Rp19.900</b></div>
+<div class="price"><span>1.000 Followers</span><b>Rp27.900</b></div>
+</div>
+
+<div class="price-group">
+<h4>🇮🇩 FOLLOWERS FULL INDO</h4>
+<div class="price"><span>100 Followers</span><b>Rp16.900</b></div>
+<div class="price"><span>500 Followers</span><b>Rp29.900</b></div>
+<div class="price"><span>1.000 Followers</span><b>Rp49.900</b></div>
+</div>
+
+<div class="price-group">
+<h4>▶️ VIEWS</h4>
+<div class="price"><span>2.000 Views</span><b>Rp3.900</b></div>
+<div class="price"><span>5.000 Views</span><b>Rp7.900</b></div>
+<div class="price"><span>10.000 Views</span><b>Rp11.900</b></div>
+</div>
+
+<a class="order-small" href="https://wa.me/628979864997?text=Halo%20King_Zeletot%2C%20saya%20mau%20order%20Instagram.">
+ORDER INSTAGRAM →
+</a>
+</div>
+
+<!-- YOUTUBE -->
+<div class="service-card">
+<h3>▶️ YOUTUBE SERVICES</h3>
+
+<div class="price-group">
+<h4>👀 VIEWS</h4>
+<div class="price"><span>500 Views</span><b>Rp4.900</b></div>
+<div class="price"><span>1.000 Views</span><b>Rp7.900</b></div>
+<div class="price"><span>5.000 Views</span><b>Rp24.900</b></div>
+</div>
+
+<div class="price-group">
+<h4>🔔 SUBSCRIBERS</h4>
+<div class="price"><span>100 Subscribers</span><b>Rp9.900</b></div>
+<div class="price"><span>500 Subscribers</span><b>Rp34.900</b></div>
+<div class="price"><span>1.000 Subscribers</span><b>Rp59.900</b></div>
+</div>
+
+<div class="price-group">
+<h4>👍 LIKE</h4>
+<div class="price"><span>100 Like</span><b>Rp4.900</b></div>
+<div class="price"><span>500 Like</span><b>Rp14.900</b></div>
+<div class="price"><span>1.000 Like</span><b>Rp24.900</b></div>
+</div>
+
+<a class="order-small" href="https://wa.me/628979864997?text=Halo%20King_Zeletot%2C%20saya%20mau%20order%20YouTube.">
+ORDER YOUTUBE →
+</a>
+</div>
+
+</div>
+</section>
+
+<!-- PAYMENT -->
+<section id="payment" class="payment">
+<h2>💳 PAYMENT METHODS</h2>
+
+<div class="payment-list">
+<span>💙 DANA</span>
+<span>🟢 GOPAY</span>
+<span>🟣 OVO</span>
+<span>▦ QRIS</span>
+</div>
+
+<p style="margin-top:18px;color:#c5ddff">
+ALL PAYMENT AVAILABLE
+</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<h2>👑 ORDER SEKARANG!</h2>
+
+<p style="margin-top:12px">
+Siap memilih layanan favoritmu?
+</p>
+
+<div class="phone">
+08979864997
+</div>
+
+<a class="btn btn-order"
+href="https://wa.me/628979864997?text=Halo%20King_Zeletot%2C%20saya%20mau%20order%20layanan%20sosmed."
+target="_blank">
+💬 ORDER VIA WHATSAPP
+</a>
+
+<p style="margin-top:20px;color:#b9d9ff">
+🕒 Buka setiap hari: 05.00–21.00 WIB
+</p>
+</section>
+
+<!-- SLOGAN -->
+<div style="text-align:center;margin:35px 0;color:#b9ddff">
+<h3 style="color:gold;margin-bottom:10px">
+YOUR SOCIAL MEDIA, YOUR CROWN! 👑
+</h3>
+
+<p style="font-size:13px">
+Terima kasih telah mengunjungi KING_ZELETOT.
+</p>
+
+<p class="note">
+Ketersediaan, kualitas, dan estimasi hasil mengikuti ketentuan layanan.
+Engagement buatan dapat berisiko melanggar kebijakan platform.
+Periksa ketentuan masing-masing platform sebelum memesan.
+</p>
+</div>
+
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a class="floating-wa"
+href="https://wa.me/628979864997?text=Halo%20King_Zeletot%2C%20saya%20mau%20order."
+target="_blank">
+💬 ORDER: 08979864997
+</a>
+
+<!-- FOOTER -->
+<footer>
+© 2026 <strong>KING_ZELETOT</strong> • All Rights Reserved
+<br><br>
+YOUR SOCIAL MEDIA, YOUR CROWN 👑
+</footer>
+
+</body>
+</html>
